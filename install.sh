@@ -58,5 +58,7 @@ cp vimrc ~/.vimrc
 mkdir -p ~/.vim
 mkdir -p ~/.vim/bundle
 cd ~/.vim/bundle
+rm -rf Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git
 vim +PluginInstall +qall
+echo Successful installation!
