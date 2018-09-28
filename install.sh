@@ -51,7 +51,11 @@ fi
 
 # 判断系统 安装必须的依赖
 Get_Dist_Name
-$PM install -y vim vim-gtk3 exuberant-ctags curl git
+if [ $PM = 'apt' ]; then
+    $PM install -y vim vim-gtk3 exuberant-ctags curl git
+else
+    $PM install -y vim vim-gtk3 ctags curl git
+fi
 # 把vimrc放到~/.vimrc
 cp vimrc ~/.vimrc
 # 安装 插件
